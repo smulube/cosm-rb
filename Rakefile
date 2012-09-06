@@ -65,7 +65,7 @@ namespace :benchmark do
       puts "\nBenchmarking feed parsing"
       puts "-------------------------"
 
-      runs = args[:runs].to_i || 10000
+      runs = args[:runs].nil? ? 10000 : args[:runs].to_i
       puts "#{runs} runs\n\n"
 
       feed = build_feed
@@ -100,7 +100,7 @@ namespace :benchmark do
       puts "\nBenchmarking feed writing"
       puts "-------------------------"
 
-      runs = args[:runs].to_i || 10000
+      runs = args[:runs].nil? ? 10000 : args[:runs].to_i
       puts "#{runs} runs\n\n"
 
       feed = build_feed
@@ -133,7 +133,7 @@ namespace :benchmark do
       puts "Benchmarking datastream parsing"
       puts "-------------------------------"
 
-      runs = args[:runs].to_i || 10000
+      runs = args[:runs].nil? ? 10000 : args[:runs].to_i
       puts "#{runs} runs\n\n"
 
       datastream = build_datastream
@@ -161,7 +161,7 @@ namespace :benchmark do
       puts "\nBenchmarking datastream writing"
       puts "--------------------------------"
 
-      runs = args[:runs].to_i || 10000
+      runs = args[:runs].nil? ? 10000 : args[:runs].to_i
       puts "#{runs} runs\n\n"
 
       datastream = build_datastream
